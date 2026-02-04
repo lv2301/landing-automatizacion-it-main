@@ -1,0 +1,171 @@
+# =============================================================================
+# requirements.txt - DEPENDENCIAS CON VERSIONES ESPECÍFICAS
+#
+# Producción: Las versiones están "pinned" (fijas) para evitar incompatibilidades
+# Desarrollo: Puedes actualizar si necesitas features nuevas
+#
+# Instalación:
+# pip install -r requirements.txt
+#
+# Actualizar paquete específico:
+# pip install --upgrade fastapi
+#
+# Ver versiones instaladas:
+# pip freeze
+#
+# =============================================================================
+
+# ============================================================================
+# 🚀 FASTAPI - Framework web moderno y rápido
+# ============================================================================
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic[email]==2.5.0
+python-multipart==0.0.6
+
+# ============================================================================
+# 🗄️ BASE DE DATOS - ORM y drivers
+# ============================================================================
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9  # Para PostgreSQL
+alembic==1.13.0
+
+# ============================================================================
+# 🤖 IA - LLM
+# ============================================================================
+groq==0.4.2
+openai==1.3.8
+
+# ============================================================================
+# 📧 EMAIL - Envío de emails
+# ============================================================================
+fastapi-mail==1.4.1
+sendgrid==6.10.0
+email-validator==2.1.0
+
+# ============================================================================
+# 💬 COMUNICACIÓN - WhatsApp, Telegram
+# ============================================================================
+twilio==8.10.0
+python-telegram-bot==20.3
+
+# ============================================================================
+# 🔗 HTTP CLIENT - Requests async
+# ============================================================================
+httpx==0.25.2
+requests==2.31.0
+
+# ============================================================================
+# 📊 AIRTABLE - CRM visual
+# ============================================================================
+pyairtable==2.3.0
+
+# ============================================================================
+# 🔐 CONFIGURACIÓN - Variables de entorno
+# ============================================================================
+python-dotenv==1.0.0
+
+# ============================================================================
+# 🔐 SEGURIDAD - Autenticación y encriptación
+# ============================================================================
+python-jose[cryptography]==3.3.0
+cryptography==41.0.7
+passlib[bcrypt]==1.7.4
+bcrypt==4.1.1
+
+# ============================================================================
+# 🚦 RATE LIMITING - Protege contra ataques
+# ============================================================================
+slowapi==0.1.9
+
+# ============================================================================
+# 📝 LOGGING - Logs estructurados
+# ============================================================================
+python-json-logger==2.0.7
+
+# ============================================================================
+# 🧪 TESTING - Tests automatizados
+# ============================================================================
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# ============================================================================
+# 🧹 DESARROLLO - Code quality
+# ============================================================================
+black==23.12.0
+flake8==6.1.0
+isort==5.13.2
+mypy==1.7.1
+
+# ============================================================================
+# 🏭 PRODUCCIÓN - WSGI/ASGI servers
+# ============================================================================
+gunicorn==21.2.0
+whitenoise==6.6.0
+
+# ============================================================================
+# 🌍 UTILIDADES - Helpers y tools
+# ============================================================================
+pendulum==2.1.2
+pytz==2023.3.post1
+python-slugify==8.0.1
+validators==0.22.0
+
+# =============================================================================
+# 📌 INSTALACIÓN Y USO
+# =============================================================================
+#
+# INSTALACIÓN INICIAL:
+# pip install -r requirements.txt
+#
+# ACTUALIZAR UN PAQUETE:
+# pip install --upgrade fastapi==0.105.0
+#
+# GENERAR requirements.txt ACTUAL:
+# pip freeze > requirements.txt
+#
+# DIFERENCIAS ENTRE AMBIENTES:
+#
+# DESARROLLO:
+# - DEBUG = True
+# - RELOAD = True
+# - SQLite (rápido de setear)
+# - Puede haber versiones más nuevas
+#
+# PRODUCCIÓN:
+# - DEBUG = False
+# - RELOAD = False
+# - PostgreSQL (escalable)
+# - Versiones pinned (estables)
+#
+# =============================================================================
+#
+# INFORMACIÓN DE VERSIONES:
+#
+# fastapi==0.104.1
+#   - Framework web moderno
+#   - Soporta async/await
+#   - OpenAPI automático
+#
+# sqlalchemy==2.0.23
+#   - ORM poderoso
+#   - Compatible con PostgreSQL y SQLite
+#   - Type hints mejorados
+#
+# groq==0.4.2
+#   - Cliente para Groq API
+#   - LLM rápido
+#   - Soporte para streaming
+#
+# slowapi==0.1.9
+#   - Rate limiting
+#   - Previene ataques DoS
+#   - Compatible con FastAPI
+#
+# psycopg2-binary==2.9.9
+#   - Driver PostgreSQL
+#   - Requerido para base de datos en producción
+#   - Incluye binarios compilados
+#
+# =============================================================================

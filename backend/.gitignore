@@ -1,0 +1,315 @@
+# ============================================================================
+# .GITIGNORE - Archivos y carpetas a excluir de Git
+#
+# Este archivo le dice a Git qué NO commitear.
+# Muy importante para:
+# - No pushear secrets (.env)
+# - No pushear archivos grandes
+# - No pushear dependencias (node_modules, venv)
+#
+# ============================================================================
+
+# ============================================================================
+# 🔐 SECRETS Y CONFIGURACIÓN (NUNCA COMMITEAR)
+# ============================================================================
+.env                          # Variables de entorno (tus secrets)
+.env.local
+.env.*.local
+.env.production
+.secrets/                     # Credenciales (Google Calendar, etc)
+secrets.json
+credentials.json
+*.key
+*.pem
+*.ppk
+
+# ============================================================================
+# 🐍 PYTHON - Archivos generados por Python
+# ============================================================================
+__pycache__/                  # Compilados de Python
+*.py[cod]                     # .pyc, .pyo, .pyd
+*$py.class
+*.so                          # Extensiones C
+.Python
+env/
+venv/                         # Virtual environment (NO commitear)
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================================================
+# 📦 DEPENDENCIAS (Instaladas con pip)
+# ============================================================================
+*.egg-info/
+dist/
+build/
+
+# ============================================================================
+# 🗄️ BASE DE DATOS
+# ============================================================================
+*.db                          # SQLite databases
+*.sqlite
+*.sqlite3
+app/proyectos.db              # Nuestra BD local
+app/*.db
+*.postgres
+
+# ============================================================================
+# 🌐 FRAMEWORK Y EDITOR (FastAPI, VSCode, etc)
+# ============================================================================
+.vscode/                      # VSCode settings (puede commiterse pero NO secrets)
+.idea/                        # IntelliJ
+.DS_Store                     # macOS
+Thumbs.db                     # Windows
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================================
+# 📝 LOGS Y ARCHIVOS TEMPORALES
+# ============================================================================
+*.log                         # Log files
+*.logs
+logs/
+*.pot
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+.coverage
+htmlcov/
+
+# ============================================================================
+# 🧪 TESTING
+# ============================================================================
+.pytest_cache/
+.tox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ============================================================================
+# 📊 IDE Y EDITORES
+# ============================================================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+.vim/
+.emacs.d/
+*~
+*.swp
+*.swo
+
+# ============================================================================
+# 🌍 NODE.JS (Si usas npm para frontend también)
+# ============================================================================
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+.eslintcache
+dist/
+
+# ============================================================================
+# 🐳 DOCKER
+# ============================================================================
+.dockerignore
+Dockerfile
+docker-compose.yml           # Puede commiterse si no tiene secrets
+docker-compose.override.yml
+
+# ============================================================================
+# ☁️ DEPLOYMENT Y HERRAMIENTAS
+# ============================================================================
+.env.production
+.vercel/
+.netlify/
+.now/
+.firebase/
+.render.yaml                 # Si tiene secrets
+
+# ============================================================================
+# 📁 CARPETAS ESPECÍFICAS DEL PROYECTO
+# ============================================================================
+/venv
+/env
+/.env
+/node_modules
+/dist
+/build
+/.pytest_cache
+/.coverage
+/htmlcov
+/site
+
+# ============================================================================
+# 🔐 ARCHIVOS DE CREDENCIALES ESPECÍFICOS
+# ============================================================================
+.secrets/                     # Carpeta de secrets
+google_calendar.json
+service-account-key.json
+*.pem
+*.key
+*.cert
+*.crt
+
+# ============================================================================
+# 📱 MOBILE Y FRONTEND (Si tienes)
+# ============================================================================
+.mobile/
+app.ipa
+app.apk
+
+# ============================================================================
+# 🎨 PROYECTO ESPECÍFICO (Luciano IT)
+# ============================================================================
+# Agregar archivos específicos de tu proyecto aquí
+*.db-journal
+app/uploads/                 # Si guardas archivos subidos
+uploads/
+media/
+static/
+temp_files/
+
+# ============================================================================
+# ⚙️ CONFIGURACIÓN LOCAL (Que NO debe estar en Git)
+# ============================================================================
+.vscode/settings.json        # Solo el settings.json personal
+.idea/workspace.xml
+*.iml
+.gradle/
+.android/
+
+# ============================================================================
+# 📝 EXCEPCIONES (Archivos QUE SÍ deben commiterse)
+# ============================================================================
+# Si necesitas commitear algo que normalmente se ignora, usa "!":
+
+# Ejemplo: Commitear venv/pyvenv.cfg como referencia
+# !venv/pyvenv.cfg
+
+# Ejemplo: Commitear .env.example como template
+!.env.example
+
+# Ejemplo: Commitear .vscode/extensions.json como referencia
+!.vscode/extensions.json
+
+# ============================================================================
+# 📋 RESUMEN: ARCHIVOS IMPORTANTES A COMMITEAR
+# ============================================================================
+#
+# ✅ COMMITEAR:
+# - app/                     (Todo el código)
+# - requirements.txt         (Dependencias)
+# - .env.example             (Template)
+# - .gitignore               (Este archivo)
+# - README.md                (Documentación)
+# - .github/workflows/       (CI/CD)
+# - docker/                  (Si tienes Dockerfile)
+#
+# ❌ NO COMMITEAR:
+# - .env                     (Tus secrets)
+# - venv/                    (Dependencias instaladas)
+# - __pycache__/             (Compilados)
+# - *.db                     (Bases de datos locales)
+# - .secrets/                (Credenciales)
+# - .vscode/settings.json    (Configuración personal)
+#
+# ============================================================================
+
+# ============================================================================
+# 🧪 TESTING Y COBERTURA
+# ============================================================================
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+coverage.xml
+*.cover
+
+# ============================================================================
+# 🚀 CI/CD Y DEPLOYMENT
+# ============================================================================
+.github/
+.gitlab-ci.yml
+.travis.yml
+appveyor.yml
+*.bak
+*.lock
+
+# ============================================================================
+# 📦 PACKAGE MANAGERS
+# ============================================================================
+poetry.lock
+Pipfile.lock
+requirements-dev.txt
+requirements-prod.txt
+
+# ============================================================================
+# 💡 SETUP RECOMENDADO INICIAL
+# ============================================================================
+#
+# Cuando creas un repo nuevo, este .gitignore cubre:
+#
+# 1. Secrets:
+#    - .env (tus variables)
+#    - .secrets/ (credenciales)
+#
+# 2. Dependencias:
+#    - venv/ (virtual env)
+#    - __pycache__/ (compilados Python)
+#
+# 3. Datos:
+#    - *.db (base de datos local)
+#    - logs/ (archivos de log)
+#
+# 4. IDE:
+#    - .vscode/ (settings personales)
+#    - .idea/ (IDE JetBrains)
+#
+# 5. Sistema:
+#    - .DS_Store (macOS)
+#    - Thumbs.db (Windows)
+#
+# ============================================================================
+
+# ============================================================================
+# 📌 VERIFICAR QUE FUNCIONA
+# ============================================================================
+#
+# Ver qué archivos Git va a trackear:
+# git status
+#
+# Ver qué se ignoraría:
+# git check-ignore -v *
+#
+# Si accidentalmente commitaste un archivo que está en .gitignore:
+# git rm --cached archivo.env
+# git commit -m "remove env from tracking"
+#
+# ============================================================================
