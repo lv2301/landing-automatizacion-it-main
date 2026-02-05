@@ -18,11 +18,11 @@ export default defineConfig({
   },
   
   build: {
-    // Minificación para producción
+    // Minificacion para produccion
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true,  // Remover console.logs en producción
+        drop_console: true,  // Remover console.logs en produccion
         drop_debugger: true
       }
     },
